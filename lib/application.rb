@@ -11,6 +11,12 @@ use OmniAuth::Builder do
   provider :singly, ENV['SINGLY_ID'], ENV['SINGLY_SECRET']
 end
 
+helpers do
+  def auth_path(service)
+    "/auth/singly?service=#{service}"
+  end
+end
+
 get "/" do
   if session[:access_token]
     @profiles = HTTParty.get(profiles_url, {
