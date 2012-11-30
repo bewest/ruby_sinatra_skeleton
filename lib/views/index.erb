@@ -14,7 +14,7 @@
   </p>
 <% end %>
 <ul>
-  <% %w[facebook twitter].each do |service| %>
+  <% %w[facebook twitter linkedin].each do |service| %>
     <li>
       <%= service.capitalize %>
       <% if @profiles && @profiles[service] %>
