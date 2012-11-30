@@ -13,7 +13,9 @@ end
 
 helpers do
   def auth_path(service)
-    "/auth/singly?service=#{service}"
+    url = "/auth/singly?service=#{service}"
+    url += "&access_token=#{session[:access_token]}" if session[:access_token]
+    url
   end
 end
 
